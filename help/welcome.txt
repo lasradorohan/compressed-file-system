@@ -1,0 +1,5 @@
+Welcome to Compressed File System
+
+To get started type 'help'
+
+For more info on a particular command type help <command>

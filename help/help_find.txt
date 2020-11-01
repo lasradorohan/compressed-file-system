@@ -1,0 +1,5 @@
+Usage: find rgxstr
+
+Action: Returns with path of first file/folder matching regular expression 'rgxstr'.
+
+Starts searching for file/folder matching 'rgxstr' in current folder and its subdirectories recursively until first match.

@@ -1,0 +1,5 @@
+Usage: exit
+
+Action: Terminates the filesystem and the interface.
+
+  Note: In current implementation, all filesystem related data will be lost on quitting.

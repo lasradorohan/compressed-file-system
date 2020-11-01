@@ -1,0 +1,5 @@
+Usage: export fname
+
+Action: Exports file 'fname' from current folder to 'export' folder on host.
+  
+  Note: May overwrite file with same name in in the export folder.

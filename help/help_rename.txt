@@ -1,0 +1,5 @@
+Usage: rename oldname newname
+
+Action: renames file with name 'oldname' to 'newname'.
+
+Data can be written to this file using the `writefile` command.

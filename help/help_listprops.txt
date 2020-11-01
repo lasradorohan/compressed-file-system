@@ -1,0 +1,5 @@
+Usage: listprops
+
+Action: Lists detailed info about file in current folder.
+
+In a table displays 'Name', 'Type', 'Filesize'(for files), 'Filesize on Disk'(for files).

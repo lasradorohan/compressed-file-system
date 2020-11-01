@@ -1,0 +1,5 @@
+Usage: listfiles
+
+Action: Lists files in current folder.
+
+Note: Folders are highlighted with blue.

@@ -1,0 +1,5 @@
+Usage: delete fname
+
+Action: Deletes file/folder having name `fname` from current directory.
+  
+  Note: If fname is a folder, 'delete' will recursively delete inner files and folders.

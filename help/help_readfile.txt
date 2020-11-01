@@ -1,0 +1,3 @@
+Usage: readfile fname
+
+Action: Displays content of file with name 'fname'.

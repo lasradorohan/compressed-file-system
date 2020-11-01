@@ -1,0 +1,5 @@
+Usage: makefile fname
+
+Action: Creates an empty file with name `fname`.
+
+Data can be written to this file using the `writefile` command.

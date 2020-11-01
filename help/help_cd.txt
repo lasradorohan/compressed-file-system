@@ -1,0 +1,12 @@
+Usage: cd path
+
+Action: Changes current directory to that specified by `path`.
+Path is relative to current folder.
+For absolute path start with '~/';
+
+Example Usages:
+  cd ./fol2/fol3
+  cd fol2/fol3/
+  cd ~/fol1/fol2/fol3/
+  
+In current implementation, when an inner folder of `path` is not found, cd falls back to inner most reachable folder.

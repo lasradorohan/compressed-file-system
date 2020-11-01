@@ -1,0 +1,6 @@
+Usage: writefile fname
+
+Action: Starts writing to file with name 'fname'.
+
+Data is input from the attached terminal.
+Input can be ended by writing --eof-- on a newline.

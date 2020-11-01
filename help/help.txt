@@ -1,0 +1,18 @@
+This is an implementation of compression built into the filesystem for efficient storage and faster access.
+
+Following is the list of commands:
+help [command]	-	Displays a brief summary of available commands. If `command` is specified gives more about `command`.
+listfiles	-	Lists files in current folder.
+listprops	-	Lists detailed info about file in current folder.
+makefile fname	-	Creates an empty file with name 'fname'.
+writefile fname	-	Starts writing to file with name 'fname'.
+readfile fname	-	Displays content of file with name 'fname'.
+makefolder fname	-	Creates an empty folder with name 'fname'.
+rename oldname newname	-	Renames file/folder with name 'oldname' to name 'newname'.
+find rgxstr		-	Returns with path of first file/folder matching regular expression 'rgxstr'.
+delete fname	-	Deletes file/folder having name 'fname'.
+import fname	-	Imports file 'fname' from import folder.
+export fname	-	Exports file 'fname' to export folder.
+cd path	-	Changes current directory to that specified by 'path'.
+tree	-	Displays all files as a tree.
+exit	-	Terminates the filesystem.
