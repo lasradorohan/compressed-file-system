@@ -30,7 +30,7 @@ class InteractivePrompt{
     InteractivePrompt(FileManager& fm);
 
     void welcome(std::ostream& out);
-    void promptLoop();;
+    void promptLoop();
 };
 
 #endif

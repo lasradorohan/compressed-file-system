@@ -10,6 +10,7 @@
 #include <sstream>
 #include <iterator>
 #include <regex>
+#include <fnmatch.h>
 
 class Folder;
 
@@ -72,9 +73,10 @@ class FileManager{
     bool _fileExists(Folder* folder, std::string fname);
     bool _fileExists(Folder* folder, std::string fname, EntityType et);
     bool _fileExists(Folder* folder, std::regex re);
+    bool _fileExists(Folder* folder, const std::string& wildcard, bool usesWildCard);
     int _getIdx(Folder* currentFolder, std::string fname);
     void _recursiveDel(Entity* e);
-    bool _recursivefind(const std::regex& re, std::vector<std::string>& path, Folder* currfol);
+    bool _recursivefind(const std::string& re, std::vector<std::string>& path, Folder* currfol);
     ErrorCode _cd(Folder* fol);
     void _treerecursive(std::ostream& out, Folder* fol, int depth);
     std::string getCurrentPath();

@@ -138,13 +138,13 @@ void InteractivePrompt::execute_rename(std::string fname, std::string newfname){
     if(flag==FileManager::ErrorCode::FileFolderExists) std::cout<<"File/Folder with name \'"<<newfname<<"\' already exists"<<std::endl;
     if(flag==FileManager::ErrorCode::FileNotFound) std::cout<<"File \'"<<fname<<"\' not found"<<std::endl;
 }
-void InteractivePrompt::execute_find(std::string rgxstr){
+void InteractivePrompt::execute_find(std::string wildcard){
     std::string foundpath;
-    flag = fm.find(rgxstr, foundpath);
+    flag = fm.find(wildcard, foundpath);
     if(flag==FileManager::ErrorCode::FileFolderNotFound){
-        std::cout<<"Could not find match for "<<rgxstr<<std::endl;
+        std::cout<<"Could not find match for "<<wildcard<<std::endl;
     } else {
-        std::cout<<"File matching "<<rgxstr<<" found at: ./"<<foundpath<<std::endl;
+        std::cout<<"File matching "<<wildcard<<" found at: ./"<<foundpath<<std::endl;
     } 
 }
 

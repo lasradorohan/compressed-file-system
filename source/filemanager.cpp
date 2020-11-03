@@ -148,6 +148,10 @@ bool FileManager::_fileExists(Folder* folder, std::regex re){
     for(const std::string& temp: folder->listContents()) if(std::regex_match(temp, re)) return true;
     return false;
 }
+bool FileManager::_fileExists(Folder* folder, const std::string& wildcard, bool usesWildCard){
+    for(const std::string& temp: folder->listContents()) if(fnmatch(wildcard.c_str(), temp.c_str(), FNM_FILE_NAME)==0) return true;
+    return false;
+}
 
 int FileManager::_getIdx(Folder* currentFolder, std::string fname){
     int idx = 0;
@@ -173,13 +177,13 @@ void FileManager::_recursiveDel(Entity* e){
     }
 }
 
-bool FileManager::_recursivefind(const std::regex& re, std::vector<std::string>& path, Folder* currfol){
-    if(_fileExists(currfol, re)){
+bool FileManager::_recursivefind(const std::string& wildcard, std::vector<std::string>& path, Folder* currfol){
+    if(_fileExists(currfol, wildcard, true)){
         path.push_back(currfol->entityName);
         return true;
     } else {
         for(Entity* e: currfol->contents){
-            if(e->entityType==folder && _recursivefind(re, path, dynamic_cast<Folder*>(e))){
+            if(e->entityType==folder && _recursivefind(wildcard, path, dynamic_cast<Folder*>(e))){
                 path.push_back(currfol->entityName);
                 return true;
             }
@@ -286,10 +290,11 @@ FileManager::ErrorCode FileManager::rename(std::string fname, std::string newfna
     return FileManager::ErrorCode::Pass;
 }
 
-FileManager::ErrorCode FileManager::find(std::string rgxstr, std::string& buffer){
+
+FileManager::ErrorCode FileManager::find(std::string wildcard, std::string& buffer){
     std::vector<std::string> temppath;
     std::stringstream foundpath;
-    bool found = _recursivefind(std::regex(rgxstr), temppath, currentFolder);
+    bool found = _recursivefind(wildcard, temppath, currentFolder);
     if(!found){
         return FileManager::ErrorCode::FileFolderNotFound;
     } else {
